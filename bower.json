@@ -15,6 +15,7 @@
     "angular-resource": "~1.4.0",
     "angular-ui-router": "^0.2.15",
     "angular-ui-mask": "*",
+    "angular-material": "*",
     "angular-strap": "*",
     "html5-boilerplate": "~5.2.0"
   }

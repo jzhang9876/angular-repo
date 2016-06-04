@@ -10,6 +10,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
 
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -51,12 +52,12 @@
 <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <ul class="nav nav-pills">
+                <ul class="nav nav-pills" ng-controller="menuController">
                     <li>
-                        <a ui-sref="detail">Create Application</a>
+                        <a ng-class="{active: isActive('/detail')}" ui-sref="detail">Create Application</a>
                     </li>
                     <li >
-                        <a ui-sref="list">Query Applications</a>
+                        <a ng-class="{active: isActive('/list')}" ui-sref="list">Query Applications</a>
                     </li>
                 </ul>
             </div>
@@ -77,10 +78,12 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script type="text/javascript" src="bower_components/angular-ui-mask/dist/mask.js"></script>
+  <script src="bower_components/angular-ui-mask/dist/mask.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
   <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
   <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
   <script src="app.js"></script>
   <script src="controller.js"></script>

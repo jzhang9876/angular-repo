@@ -48,4 +48,8 @@ angular.module('myApp.controllers', [])
     	startingDay: 1,
     	showWeeks: false,
   	};
-});
+}).controller('menuController', ['$scope', '$location', function($scope, $location){
+    $scope.isActive = function (viewLocation) {
+    	return $location.path().startsWith(viewLocation);
+    }
+}]);
