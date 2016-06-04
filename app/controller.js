@@ -20,7 +20,7 @@ angular.module('myApp.controllers', ['ngMaterial'])
 	}
 
 	$scope.update = function() {
-		$scope.resetDob();
+		//$scope.resetDob();
 
 		if (id) {
 			n400Service.update($scope.n400, function(data) {
