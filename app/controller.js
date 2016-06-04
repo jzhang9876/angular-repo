@@ -2,9 +2,20 @@
 
 angular.module('myApp.controllers', ['ngMaterial'])
 .controller('listController', ['$scope', 'n400Service', function($scope, n400Service) {
-	$scope.applications = n400Service.query();
+	//$scope.applications = n400Service.query();
 	$scope.searchNumber = "";
 	$scope.searchLastName = "";
+
+	$scope.search = function() {
+		var param = {};
+		if ($scope.searchLastName)
+			param.lastName = $scope.searchLastName;
+
+		if ($scope.searchNumber)
+			param.aNumber = $scope.searchNumber;
+
+		$scope.applications = n400Service.query(param);
+	}
 
 }])
 .controller('detailController', function($scope, $stateParams, n400Service, $location) {
