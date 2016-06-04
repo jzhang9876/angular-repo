@@ -1,0 +1,10 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>First Name</th><th>Last Name</th><th>Data of Birth</th><th>Country</th><th>Status</th><th>Contact #</th><th ng-if="editable"/>
+    </tr>
+    </thead>
+    <tr ng-repeat="n400 in applications"><td>{{n400.firstName}}</td><td>{{n400.lastName}}</td><td>{{n400.dateOfBirth}}</td><td>{{n400.countryOfBirth}}</td><td>{{n400.status}}</td><td>{{n400.contactNumber | telFilter}}</td><td ng-if="editable"><a ng-if="editable" href="#/detail/{{n400.id}}">Edit</a></td></tr>
+  </table>
+</div>

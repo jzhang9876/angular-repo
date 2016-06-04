@@ -1,0 +1,11 @@
+        <div class="col-sm-8 pull-right search-row">
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span> Search
+            </button>
+            <input type="text" id="search-box" class="form-control" placeholder="Number" ng-model="searchNumber">
+            <input type="text" id="search-box" class="form-control" placeholder="Last Name" ng-model="searchLastName">
+        </div>
+        <div class="col-sm-12">
+                <a href="#" class="list-group-item active">N400 Applications</a>
+                <action-table applications="applications" editable="true" />
+        </div>

@@ -1,0 +1,93 @@
+        <div class="row">
+	        <div class="col-xs-12">
+	        	<form method="POST">
+                    <!-- Editing an existing application: include number -->
+                    <h3 ng-show="n400.id">N400 Application: {{n400.aNumber}}</h3>
+                    <!-- or, creating a new one -->
+                    <h3 ng-hide="n400.id">New N400 Application</h3>
+                    
+                    <input type="hidden" name="number" value="">
+        			
+                    <!-- Permanent Resident Name -->
+                    <div class="col-sm-12">
+        				<label for="pname">Permanent Resident Name</label>
+        			</div>
+        			<div class="col-sm-4 form-group">
+	        			<input type="text" class="form-control" placeholder="Family Name" name="lastname" id="lastname" ng-model="n400.lastName">
+	        		</div>
+        			<div class="col-sm-4 form-group">
+	        			<input type="text" class="form-control" placeholder="Given Name" name="firstname" id="firstname" ng-model="n400.firstName">
+	        		</div>
+        			<div class="col-sm-4 form-group">
+        				<input type="text" class="form-control" placeholder="Middle Name" name="middlename" id="middlename ng-model="n400.middleName">
+        			</div>
+
+                    <!-- Current Legal Name -->
+        			<div class="col-sm-12">
+        				<label for="lname">Current Legal Name</label>
+        			</div>
+                    <div class="col-sm-4 form-group">
+                        <input type="text" class="form-control" placeholder="Family Name" name="current_lastname" id="current_lastname" ng-model="n400.currentLastName">
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <input type="text" class="form-control" placeholder="Given Name" name="current_firstname" id="current_firstname" ng-model="n400.currentFirstName">
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <input type="text" class="form-control" placeholder="Middle Name" name="current_middlename" id="current_middlename" ng-model="n400.currentMiddleName">
+                    </div>
+        			
+                    <!-- Gender -->
+                    <div class="col-sm-12 form-group">
+	        			<label for="gender">Gender</label>
+	        			<select class="form-control" name="gender" id="gender" ng-model="n400.gender">
+	        				<option value="">Select One...</option>
+	        				<option value="m">Male</option>
+	        				<option value="f">Female</option>
+	        			</select>
+	        		</div>
+
+                    <!-- Date of Birth -->
+        			<div class="col-sm-12 form-group">
+	        			<label for="dateofbirth">Date of Birth</label>
+                        <!--
+                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="n400.dateOfBirth" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                        -->
+                        <input type="text" class="form-control" ng-model="n400.dateOfBirth" data-date-format="MM-dd-yyyy" data-autoclose="1" name="date" bs-datepicker>
+	        		</div>
+
+                    <!-- Country of Birth -->
+        			<div class="col-sm-12 form-group">
+	        			<label for="country">Country of Birth</label>
+                        <input type="text" class="form-control" placeholder="Country of Birth" name="country" id="country" ng-model="n400.countryOfBirth">
+	        		</div>
+
+                    <!-- Status -->
+                    <div class="col-sm-12 form-group">
+                        <label for="status">Status</label>
+                        <select class="form-control" name="status" id="status" ng-model="n400.status">
+                            <option value="submitted">Submitted</option>
+                            <option value="in_review">In Review</option>
+                            <option value="biometrics_scheduled">Biometrics Scheduled</option>
+                            <option value="interview_scheduled">Interview Scheduled</option>
+                            <option value="oath_letter_issued">Oath Letter Issued</option>
+                            <option value="decision_pending">Decision Pending</option>
+                            <option value="naturalized">Naturalized</option>
+                        </select>
+                    </div>
+
+
+                    <!-- Contact Number -->
+                    <div class="col-sm-12 form-group">
+                        <label for="phone">US Contact Number</label>
+                        <input type="text" class="form-control" ui-mask="(999)999-9999" name="phone" id="phone" ng-model="n400.contactNumber">
+                    </div>
+
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-right fads-button" ng-click="update()">Submit</button>
+                        <button class="btn pull-right fads-button" ng-click="cancel()">Cancel</button>
+                    </div>
+	        	</form>
+	      	</div>
+        </div>
