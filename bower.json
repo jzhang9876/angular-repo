@@ -17,6 +17,7 @@
     "angular-ui-mask": "*",
     "angular-material": "*",
     "angular-strap": "*",
+    "moment": "~2.13.0",
     "html5-boilerplate": "~5.2.0"
   }
 }
